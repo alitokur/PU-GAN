@@ -11,10 +11,6 @@ See the instructions in [here](./Docker).
 ### Installation
 
 
-### Note
-When running the code, if you have `undefined symbol: _ZTIN10tensorflow8OpKernelE` error, you need to compile the TF operators. If you have already added the `-I$TF_INC/external/nsync/public -L$TF_LIB -ltensorflow_framework` but still have ` cannot find -ltensorflow_framework` error. Please use 'locate tensorflow_framework
-' to locate the tensorflow_framework library and make sure this path is in `$TF_LIB`.
-
 ### Usage
 
 1. Clone the repository:
