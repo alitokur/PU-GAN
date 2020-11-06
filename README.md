@@ -1,7 +1,4 @@
 # PU-GAN: a Point Cloud Upsampling Adversarial Network
-by [Ruihui Li](https://liruihui.github.io/), [Xianzhi Li](https://nini-lxz.github.io/), [Chi-Wing Fu](http://www.cse.cuhk.edu.hk/~cwfu/), [Daniel Cohen-Or](https://www.cs.tau.ac.il/~dcor/), [Pheng-Ann Heng](http://www.cse.cuhk.edu.hk/~pheng/). 
-
-
 
 ### Docker
 A Dockerfile is provided to help you relief the pain of configurate training environment. 
@@ -13,12 +10,6 @@ See the instructions in [here](./Docker).
 
 ### Usage
 
-1. Clone the repository:
-
-   ```shell
-   https://github.com/liruihui/PU-GAN.git
-   cd PU-GAN
-   ```
    
 2. Compile the TF operators
    Follow the above information to compile the TF operators. 
