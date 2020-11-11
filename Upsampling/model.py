@@ -254,7 +254,11 @@ class Model(object):
           self.pred_pc = Gen(self.pred_pc)
 
       saver = tf.train.Saver()
-      restore_epoch, checkpoint_path = model_utils.pre_load_checkpoint(self.opts.log_dir)
+      print("****** phrase test ******")
+
+      ##restore_epoch, checkpoint_path = model_utils.pre_load_checkpoint(self.opts.log_dir)
+      ##to use pretrained model comment the line above 
+      checkpoint_path = "/home/alitokur/Softwares/PU-GAN/model/model-100"
       print(checkpoint_path)
       saver.restore(self.sess, checkpoint_path)
 
