@@ -245,7 +245,8 @@ class Model(object):
       return input_list, up_point_list
 
   def test(self):
-
+    
+      print("****** phrase test ******")
       self.inputs = tf.placeholder(tf.float32, shape=[1, self.opts.patch_num_point, 3])
       is_training = tf.placeholder_with_default(False, shape=[], name='is_training')
       Gen = Generator(self.opts, is_training, name='generator')
@@ -254,18 +255,20 @@ class Model(object):
           self.pred_pc = Gen(self.pred_pc)
 
       saver = tf.train.Saver()
-      print("****** phrase test ******")
+     
 
       ##restore_epoch, checkpoint_path = model_utils.pre_load_checkpoint(self.opts.log_dir)
       ##to use pretrained model comment the line above 
       checkpoint_path = "/home/alitokur/Softwares/PU-GAN/model/model-100"
       print(checkpoint_path)
       saver.restore(self.sess, checkpoint_path)
-
       samples = glob(self.opts.test_data)
+      print(self.opts.test_data);
       point = pc_util.load(samples[0])
       self.opts.num_point = point.shape[0]
-      out_point_num = int(self.opts.num_point*self.opts.up_ratio)
+      ##out_point_num = int(self.opts.num_point*self.opts.up_ratio)
+      out_point_num = 30000
+
 
       for point_path in samples:
           logging.info(point_path)
@@ -279,6 +282,7 @@ class Model(object):
               pc = pc[0, ...]
 
           input_list, pred_list = self.pc_prediction(pc)
+          ##print("input list > ",input_list)
 
           end = time()
           print("total time: ", end - start)
